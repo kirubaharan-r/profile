@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(to bottom right, #ffffff, #f7f7f7);
+      margin: 0;
+      padding: 0;
+    }
+    /* Container Styles */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: linear-gradient(to bottom right, #ffffff, #f7f7f7);
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      text-align: left;
+    }
+
+    /* Profile Image Styles */
+    .profile-image {
+      display: block;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 20px auto;
+      object-fit: cover;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Text Styles */
+    h1 {
+      color: #f9bc15;
+      margin-bottom: 10px;
+    }
+     
+
+    h2 {
+      color: #f9bc15;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    p {
+      color: #333333;
+      line-height: 1.5;
+      margin: 10px 0;
+      text-align: left;
+    }
+
+    ul {
+      color: #333333;
+      line-height: 1.5;
+      margin: 10px 0;
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    /* Contact Handles Styles */
+    .contact-handles {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .contact-handles a {
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: none;
+      color: #f9bc15;
+    }
+
+    /* Logo Styles */
+    .logo {
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    /* Resume Link Styles */
+    .resume-link {
+      display: block;
+      color: #f9bc15;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    
+
+    .resume-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      .profile-image {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>John Doe</h1> 
+    <img class="profile-image" src="profile-image.jpg" alt="Profile Image">
+    <a class="resume-link" href="rezume.html" target="_blank">View Resume</a>
+    <div class="resume-section">
+      <h2>Profile</h2>
+      <p>Occupation: Devops Engineer </p>
+      <p>Location: Perambalur</p>
+    </div>
+    <div class="resume-section">
+      <h2>About Me</h2>
+      <p>I am a highly skilled and motivated cloud computing professional with experience in designing and managing complex infrastructure and security policies. My expertise in automation, security, and open-source technologies, combined with a passion for learning new platforms, enables me to provide innovative solutions to complex challenges. I have hands-on experience in creating and managing CI/CD pipelines, deploying and monitoring AWS EKS clusters, and managing AWS VPCs and VPNs. I am also experienced in hardening systems and managing clusters using Terraform. I gained valuable experience in product management, client support, incident management, and vulnerability analysis in my previous roles .</p>
+    </div>
+    <div class="resume-section">
+      <h2>Skills</h2>
+      <ul>
+        <li>AWS cloud </li>
+        <li>Kubernetes</li>
+        <li>Containers</li>
+        <li>Scripting</li>
+        <li>Golang</li>
+        <li>CI/CD</li>
+        <li>Monitoring</li>
+      </ul>
+    </div>
+    <div class="contact-handles">
+      <a href="https://www.linkedin.com/" target="_blank"><img class="logo" src="linkedin-logo.png" alt="LinkedIn Logo">LinkedIn</a>
+      <a href="https://github.com/kirubaharan-r" target="_blank"><img class="logo" src="github-logo.png" alt="GitHub Logo">GitHub</a>
+      <a href="mailto:kirubaharanrajenthiran@gmail.com.com"><img class="logo" src="mail-logo.png" alt="Mail Logo">Email</a>
+      <p><img class="logo" src="address-logo.png" alt="Address Logo">Perambalur, India</p>
+    </div>
+  </div>
+</body>
+</html>
