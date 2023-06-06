@@ -5,23 +5,20 @@
   <style>
     /* Global Styles */
     body {
-      font-family: "Poppins", Arial, sans-serif;
-      background: linear-gradient(to bottom left, #444, #444);
+      font-family: 'Nunito', Arial, sans-serif;
+      background: linear-gradient(to bottom left, #F6D365, #FDA085);
       margin: 0;
       padding: 0;
     }
     /* Container Styles */
     .container {
-      max-width: 1920px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 20px;
-      background: linear-gradient(to bottom right, #444, #444);
+      background: #444;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: left;
-      text-align: left;
+      text-align: center;
     }
 
     /* Profile Image Styles */
@@ -30,9 +27,8 @@
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      margin: 20px;
+      margin: 20px auto;
       object-fit: cover;
-      align-items: left;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     }
 
@@ -41,27 +37,26 @@
       color: #b5e853;
       margin-bottom: 10px;
     }
-     
 
     h2 {
       color: #b5e853;
       margin-bottom: 10px;
-      text-align: left;
+      text-align: center;
     }
 
     p {
-      color: #DDD;
+      color: #b5e853;
       line-height: 1.5;
       margin: 10px 0;
-      text-align: left;
+      text-align: justify;
     }
 
     ul {
-      color: #DDD;
+      color: #b5e853;
       line-height: 1.5;
       margin: 10px 0;
       padding-left: 20px;
-      text-align: left;
+      text-align: justify;
     }
 
     /* Contact Handles Styles */
@@ -69,35 +64,57 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
       margin-top: 20px;
     }
 
     .contact-handles a {
       display: inline-block;
-      margin: 0 10px;
+      margin: 10px;
       text-decoration: none;
-      color: #f9bc15;
+      color: #b5e853;
+      font-size: 18px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .contact-handles a:hover {
+      color: #F6D365;
     }
 
     /* Logo Styles */
     .logo {
-      width: 30px;
-      height: 30px;
+      width: 24px;
+      height: 24px;
       margin-right: 5px;
       vertical-align: middle;
     }
 
     /* Resume Link Styles */
     .resume-link {
-      display: block;
-      color: #f9bc15;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      background-color: #F6D365;
       text-decoration: none;
-      margin-top: 20px;
+      border-radius: 30px;
+      font-size: 18px;
+      transition: background-color 0.3s ease-in-out;
     }
-    
 
     .resume-link:hover {
-      text-decoration: underline;
+      background-color: #FDA085;
+    }
+
+    /* Animation Styles */
+    @keyframes scramble {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     /* Responsive Styles */
@@ -110,34 +127,56 @@
         width: 150px;
         height: 150px;
       }
+
     }
+    .blinking-cursor {
+  content: "";
+  width: 5px;
+  height: 20px;
+  background: #b5e853;
+  display: inline-block;
+  animation: cursor-blink 1.5s steps(2) infinite;
+  align-items: center;
+  gap: 2px;
+    }
+
+@keyframes cursor-blink {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+
+}
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1  class="scramble-text">/  Kirubaharan Rajenthiran</h1> 
+    <h1 class="scramble-text"> Kirubaharan Rajenthiran</h1>
     <img class="profile-image" src="profile-image.jpg" alt="Profile Image">
     <a class="resume-link" href="Rezume.html" target="_blank">View Resume</a>
     <div class="resume-section">
       <h2>Profile</h2>
-      <p class="scramble-text">Occupation: Devops Engineer</p>
-      <p class="scramble-text">Location: Perambalur</p>
+      <p class="scramble-text" >Occupation: Devops Engineer</p>
+      <p class="scramble-text" >Location: Perambalur</p>
     </div>
     <div class="resume-section">
       <h2>About Me</h2>
-      <p >Enthusiastic cloud computing professional with a passion for innovation and expertise in infrastructure design, automation, security, and open-source technologies and innovative solutions.</p>
+      <p>Enthusiastic cloud computing professional with a passion for innovation and expertise in infrastructure design, automation, security, and open-source technologies and innovative solutions.<span class="blinking-cursor"></span></p>
     </div>
     <div class="resume-section">
-      <h2 >Skills</h2>
-      <ul >
-        <li class="scramble-text">AWS cloud</li>
-        <li class="scramble-text">Kubernetes</li>
-        <li class="scramble-text">Containers</li>
-        <li class="scramble-text">Scripting</li>
-        <li class="scramble-text">Golang</li>
-        <li class="scramble-text">CI/CD</li>
-        <li class="scramble-text">Monitoring</li>
+      <h2>Skills</h2>
+      <ul>
+        <li class="scramble-text" >AWS Cloud</li>
+        <li class="scramble-text" >Kubernetes</li>
+        <li class="scramble-text" >Containers</li>
+        <li class="scramble-text" >Scripting</li>
+        <li class="scramble-text" >Golang</li>
+        <li class="scramble-text" >CI/CD</li>
+        <li class="scramble-text" >Monitoring</li>
+        <li><span class="blinking-cursor"></span></li>
       </ul>
     </div>
     <div class="contact-handles">
@@ -146,7 +185,6 @@
       <a href="mailto:kirubaharanrajenthiran@gmail.com"><img class="logo" src="mail-logo.png" alt="Mail Logo">Email</a>
       <a href="https://medium.com/@kiruyoyo"><img class="logo" src="medium-logo.png" alt="Blog Logo">Medium</a>
       <a href="#"><img class="logo" src="address-logo.png" alt="Address Logo">Perambalur, India</a>
-     
     </div>
   </div>
 
