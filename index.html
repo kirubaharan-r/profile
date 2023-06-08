@@ -6,7 +6,7 @@
     /* Global Styles */
     body {
       font-family: 'Nunito', Arial, sans-serif;
-      background: linear-gradient(to bottom left, #F6D365, #FDA085);
+      background: linear-gradient(to bottom left, #f2f5f5, #e9e5e4);
       margin: 0;
       padding: 0;
     }
@@ -16,6 +16,7 @@
       margin: 0 auto;
       padding: 20px;
       background: #f7f8f9;
+      color:#45505b
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       text-align: center;
@@ -72,7 +73,7 @@
       display: inline-block;
       margin: 10px;
       text-decoration: none;
-      color: #b5e853;
+      color: #45505b;
       font-size: 18px;
       transition: color 0.3s ease-in-out;
     }
@@ -106,15 +107,21 @@
     }
 
     /* Animation Styles */
-    @keyframes scramble {
-      0% {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
+    .typing-animation {
+      animation: typing 2s steps(40), blink-caret 0.75s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 1px solid black;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: black; }
     }
 
     /* Responsive Styles */
@@ -134,33 +141,36 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="scramble-text"> Kirubaharan Rajenthiran</h1>
+    <h1><span class="typing-animation">Kirubaharan Rajenthiran</span></h1>
     <img class="profile-image" src="profile-image.jpg" alt="Profile Image">
     <a class="resume-link" href="Rezume.html" target="_blank">View Resume</a>
     <div class="resume-section">
       <h2>Profile</h2>
-      <p class="scramble-text" >Occupation: Devops Engineer</p>
-      <p class="scramble-text" >Location: Perambalur</p>
+      <p>Occupation:  Devops Engineer </p>
+      <p>Location:  Perambalur </p>
     </div>
     <div class="resume-section">
       <h2>About Me</h2>
-     <p>Passionate and enthusiastic cloud computing professional, AWS Certified Solution Architect, with expertise in architecting infrastructure design, automation, security, and open-source technologies across multiple cloud platforms. Committed to driving innovation and delivering cutting-edge solutions through effective cross-cloud architectural strategies. Excited about leveraging various cloud services to design scalable and resilient solutions that optimize performance and meet evolving business needs across different cloud environments.</p></div>
+      <p>Passionate and enthusiastic cloud computing professional, AWS Certified Solution Architect, with expertise in architecting infrastructure design, automation, security, and open-source technologies across multiple cloud platforms. Committed to driving innovation and delivering cutting-edge solutions through effective cross-cloud architectural strategies. Excited about leveraging various cloud services to design scalable and resilient solutions that optimize performance and meet evolving business needs across different cloud environments.</p>
+    </div>
     <div class="resume-section">
       <h2>Skills</h2>
       <ul>
-        <li class="scramble-text" >AWS Cloud</li>
-        <li class="scramble-text" >Kubernetes</li>
-        <li class="scramble-text" >Containers</li>
-        <li class="scramble-text" >Scripting</li>
-        <li class="scramble-text" >Golang</li>
-        <li class="scramble-text" >CI/CD</li>
-        <li class="scramble-text" >Monitoring </li>
-        <li class="scramble-text">VPN</li>
-        <li class="scrambles-text">Networking</li>
+        <li> AWS Cloud </li>
+        <li> Kubernetes </li>
+        <li> Containers </li>
+        <li> Scripting </li>
+        <li> Golang </li>
+        <li> CI/CD </li>
+        <li>Monitoring </li>
+        <li>VPN </li>
+        <li>Networking </li>
       </ul>
-      <h2>Certifications</h2><ul>
-      <li class="scramble-text">AWS cerified Solutions Architect</li>
-      <li class="scramble-text">Cisco certified network Associate</li></ul>
+      <h2>Certifications</h2>
+      <ul>
+        <li> AWS certified Solutions Architect </li>
+        <li>Cisco certified network Associate</li>
+      </ul>
     </div>
     <div class="contact-handles">
       <a href="https://www.linkedin.com/in/kirubaharanr" target="_blank"><img class="logo" src="linkedin-logo.png" alt="LinkedIn Logo">LinkedIn</a>
@@ -172,34 +182,25 @@
   </div>
 
   <script>
-    function scrambleText(element) {
-      var originalText = element.textContent;
-      var scrambledText = "";
-      var currentIndex = 0;
-      var scrambleInterval = setInterval(function() {
-        if (currentIndex >= originalText.length) {
-          clearInterval(scrambleInterval);
+    function simulateTyping(element) {
+      const text = element.textContent;
+      let currentCharIndex = 0;
+      element.textContent = '';
+
+      const typingInterval = setInterval(() => {
+        if (currentCharIndex === text.length) {
+          clearInterval(typingInterval);
         } else {
-          scrambledText += originalText[currentIndex];
-          element.textContent = scrambledText + getRandomLetters(originalText.length - currentIndex - 1);
-          currentIndex++;
+          element.textContent += text.charAt(currentCharIndex);
+          currentCharIndex++;
         }
       }, 50);
     }
 
-    function getRandomLetters(length) {
-      var letters = "abcdefghijklmnopqrstuvwxyz0123456789";
-      var randomLetters = "";
-      for (var i = 0; i < length; i++) {
-        randomLetters += letters[Math.floor(Math.random() * letters.length)];
-      }
-      return randomLetters;
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-      var scrambleElements = document.getElementsByClassName("scramble-text");
-      for (var i = 0; i < scrambleElements.length; i++) {
-        scrambleText(scrambleElements[i]);
+    document.addEventListener('DOMContentLoaded', function() {
+      const typingElements = document.getElementsByClassName('typing-animation');
+      for (let i = 0; i < typingElements.length; i++) {
+        simulateTyping(typingElements[i]);
       }
     });
   </script>
